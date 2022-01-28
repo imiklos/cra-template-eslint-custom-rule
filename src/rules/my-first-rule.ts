@@ -1,6 +1,8 @@
 import { createRule } from '../utils';
 
-export const rule = createRule({
+export const fooBarRule = createRule({
+  name: 'foo-bar',
+  defaultOptions: [],
   meta: {
     fixable: 'code',
     docs: {
@@ -9,7 +11,7 @@ export const rule = createRule({
     },
     schema: [],
     messages: {
-      fooBar: `Add 'Bar' after 'foo'.`,
+      fooBar: `Variable name 'foo' should be followed by 'Bar'`,
     },
     type: 'problem',
   },
@@ -24,6 +26,4 @@ export const rule = createRule({
       }
     },
   }),
-  name: 'fooBar',
-  defaultOptions: [],
 });

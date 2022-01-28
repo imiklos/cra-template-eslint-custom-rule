@@ -1,7 +1,10 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.2",
   "license": "MIT",
+  "name": "eslint-plugin-custom-rule",
+  "author": "Istvan Miklos",
   "main": "dist/index.js",
+  "module": "dist/eslint-plugin-custom-rule.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist/**",
@@ -32,16 +35,13 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "cra-template-eslint-custom-rule",
-  "author": "Istvan Miklos",
-  "module": "dist/cra-template-eslint-custom-rule.esm.js",
   "size-limit": [
     {
-      "path": "dist/cra-template-eslint-custom-rule.cjs.production.min.js",
+      "path": "dist/eslint-plugin-custom-rule.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/cra-template-eslint-custom-rule.esm.js",
+      "path": "dist/eslint-plugin-custom-rule.esm.js",
       "limit": "10 KB"
     }
   ],

@@ -1,1 +1,7 @@
-export { rule } from './rules/my-first-rule';
+import { fooBarRule } from './rules/my-first-rule';
+
+module.exports = {
+  rules: {
+    'foo-bar': fooBarRule,
+  },
+};
