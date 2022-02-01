@@ -1,15 +1,14 @@
-import { ESLintUtils } from '@typescript-eslint/utils';
+import ESLintUtils from 'eslint';
 import { fooBarRule } from '../src/rules/my-first-rule';
-import type { InvalidCaseErrorType, InvalidCaseWithoutError } from '../src/types'
 
 const ruleTester = new ESLintUtils.RuleTester({
-  parser: '@typescript-eslint/parser',
+  parser: require.resolve('@typescript-eslint/parser'),
 });
 
 const validCase1 = { code: 'let fooBar = 5' };
 const validCase2 = { code: 'let notfoo = 5' };
 
-const fooBarErrors: InvalidCaseErrorType<'fooBar'> = {
+const fooBarErrors = {
   errors: [
     {
       messageId: 'fooBar',
@@ -17,7 +16,7 @@ const fooBarErrors: InvalidCaseErrorType<'fooBar'> = {
   ],
 };
 
-const fooBarInvalidCaseGenerator = (invalidCase: InvalidCaseWithoutError) =>
+const fooBarInvalidCaseGenerator = (invalidCase) =>
   Object.assign(fooBarErrors, invalidCase);
 
 const invalidCase1 = fooBarInvalidCaseGenerator({

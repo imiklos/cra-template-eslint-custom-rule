@@ -1,13 +1,11 @@
-import { createRule } from '../utils';
+import { Rule } from 'eslint';
 
-export const fooBarRule = createRule({
-  name: 'foo-bar',
-  defaultOptions: [],
+export const fooBarRule: Rule.RuleModule = {
   meta: {
     fixable: 'code',
     docs: {
       description: `Variable name 'foo' should be followed by 'Bar'`,
-      recommended: 'error',
+      recommended: true,
     },
     schema: [],
     messages: {
@@ -15,15 +13,15 @@ export const fooBarRule = createRule({
     },
     type: 'problem',
   },
-  create: context => ({
+  create: (context) => ({
     VariableDeclarator(node) {
       if (node.id.type === 'Identifier' && node.id.name === 'foo') {
         context.report({
           messageId: 'fooBar',
           node: node.id,
-          fix: fixer => fixer.insertTextAfter(node.id, 'Bar'),
+          fix: (fixer) => fixer.insertTextAfter(node.id, 'Bar'),
         });
       }
     },
   }),
-});
+};
