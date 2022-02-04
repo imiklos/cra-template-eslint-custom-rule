@@ -1,11 +1,12 @@
 {
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "name": "eslint-plugin-custom-rule",
   "author": "Istvan Miklos",
   "main": "dist/index.js",
   "module": "dist/eslint-plugin-custom-rule.esm.js",
   "typings": "dist/index.d.ts",
+  "repository": "https://github.com/imiklos/eslint-plugin-custom-rule",
   "files": [
     "dist",
     "src"
